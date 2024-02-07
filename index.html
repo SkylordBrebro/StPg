@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>~/startpage ⭕</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="image">
+		<img id="carouselImage" src="cover1.webp">
+	</div>
+	<div id="text">
+		<div id="greeting">Welcome $HOME!</div>
+		<div class="search-box">
+            <form id="searchForm" action="https://www.ecosia.org/search" method="GET" onsubmit="return search()">
+                <input type="text" name="q" id="searchInput" placeholder="Search...">
+            </form>
+        </div>
+		<div id="date"></div>
+				<div id="links">
+			<div class="urls">
+				<div class="header">~/general </div>
+				<ul>
+					<li><a href="https://youtube.com">YouTube</a></li>
+					<li><a href="https://monkeytype.com/">MonkeyType</a></li>
+					<li><a href="https://mail.google.com/">GMail</a></li>
+					<li><a href="https://drive.google.com/">GDrive</a></li>
+				</ul>
+			</div>
+			<div class="urls">
+				<div class="header">~/devel </div>
+				<ul>
+					<li><a href="https://github.com/SkylordBrebro">GitHub</a></li>
+					<li><a href="https://gitlab.com/dashboard/projects">GitLab</a></li>
+					<li><a href="https://gitlab.com/fazzi/dotfiles">Dotfiles</a></li>
+					<li><a href="https://modrinth.com/">Modrinth</a></li>
+				</ul>
+			</div>
+			<div class="urls">
+				<div class="header">~/school 󰑴</div>
+				<ul>
+					<li><a href="https://www.office.com/?auth=2">Office</a></li>
+					<li><a href="https://www.satchelone.com/todos/upcoming">SatchelOne</a></li>
+					<li><a href="https://www.physicsandmathstutor.com/">P&MT</a></li>
+					<li><a href="https://z-library.se">Z-Library</a></li>
+				</ul>
+			</div>
+			<div class="urls">
+				<div class="header">~/reddit </div>
+				<ul>
+					<li><a href="https://reddit.com/">reddit.com</a></li>
+					<li><a href="https://reddit.com/r/unixporn/">r/unixporn</a></li>
+					<li><a href="https://reddit.com/r/archlinux/">r/archlinux</a></li>
+					<li><a href="https://reddit.com/r/linux_gaming/">r/linux_gaming</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script async src="date.js"></script>
+<script async src="theme.js" currentIndex="0"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		setTimeout(function() {
+			document.getElementById('searchInput').focus();
+		}, 500);
+	});
+</script>
+</html>
