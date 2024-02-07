@@ -75,34 +75,6 @@ body {
   text-align: center;
   display: grid;
 }
-#searchForm {
-	text-align: center;
-	margin-top: 0px;
-	margin-left: 15px;
-	padding: 10px;
-	border: none;
-	display: grid;
-	color: var(--accent-color-2);
-	width: 4000; /* Adjusted width to account for padding */
-}
-.search-box {
-    text-align: center;
-    margin-top: 0px; /* Adjust margin as needed */
-    margin-left: 15px;
-    padding: 10px;
-    display: grid;
-    width: 10;
-    background-color: rgba(255, 255, 255, 0.025); /* Set background color with 25% transparency */
-    border-radius: 8px; /* Adjust the border radius to your preference */
-}
-#searchInput {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    padding: .5px; /* Adjust padding as needed */
-    font-size: 16px; /* Increase the font size */
-    color: var(--accent-color-2);
-}
 #date {
   font-size: 1.3em;
   font-weight: 600;
