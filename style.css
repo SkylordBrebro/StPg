@@ -95,7 +95,6 @@ body {
   font-weight: 600;
   text-align: Left;
   margin-left: 7px;
-  transition: color 0.2s ease-out;
 }
 
 #links {
@@ -113,5 +112,4 @@ a {
   color: var(--text-color);
   font-size: 1.2em;
   text-decoration: none;
-  transition: color ease-out 0.2s;
 }
