@@ -3,16 +3,12 @@
   font-display: swap;
   src:
     local("SpaceMono Nerd Font"),
-		url(./fonts/SpaceMonoNF.woff2) format("woff2"),
-    url(./fonts/SpaceMonoNF.woff) format("woff");
+		url(SpaceMonoNF.woff2) format("woff2"),
+    url(SpaceMonoNF.woff) format("woff");
 }
 
 :root {
 	color-scheme: dark;
-}
-
-* {
-  transition: all 0.2s ease-in-out;
 }
 
 html {
@@ -33,16 +29,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-#text {
-	transform: translateX(100vw);
-	transition: transform 0.5s ease-in-out;
-}
-
-#text.loaded {
-  transform: translateX(0vw);
-}
-
 #carouselImage {
   height: 550px;
   aspect-ratio: 9 / 16;
@@ -51,16 +37,6 @@ body {
   object-fit: cover;
   margin-right: 2em;
 }
-
-#image {
-	opacity: 0;
-	transition: opacity 0.5s linear;
-}
-
-#image.loaded {
-	opacity: 1;
-}
-
 @media (max-width: 800px) {
   img {
     display: none;
