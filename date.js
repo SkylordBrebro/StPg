@@ -11,6 +11,7 @@ function showTime() {
 		day: "2-digit",
 		month: "2-digit",
 		year: "2-digit",
+		hour12: "true"
 	};
 
 	const formattedDate = date.toLocaleString("en-GB", options);
