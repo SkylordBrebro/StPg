@@ -95,6 +95,118 @@
             window.location.href = searchURL; // Navigate to the search URL
             return false; // Prevent form submission
         }
+	    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>~/startpage ⭕</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div id="image">
+        <img id="carouselImage" src="cover1.webp">
+    </div>
+    <div id="text">
+        <div id="greeting">Welcome $HOME!</div>
+        <div class="search-box">
+            <!-- Remove action and method attributes from the form -->
+            <form id="searchForm" onsubmit="return navigateToURL()">
+                <input type="text" name="q" id="searchInput" placeholder="Search...">
+            </form>
+        </div>
+        <div id="date"></div>
+				<div id="links">
+			<div class="urls">
+				<div class="header">~/general </div>
+				<ul>
+					<li><a href="https://youtube.com">YouTube</a></li>
+					<li><a href="https://monkeytype.com/">MonkeyType</a></li>
+					<li><a href="https://mail.google.com/">GMail</a></li>
+					<li><a href="https://drive.google.com/">GDrive</a></li>
+				</ul>
+			</div>
+			<div class="urls">
+				<div class="header">~/devel </div>
+				<ul>
+					<li><a href="https://github.com/SkylordBrebro">GitHub</a></li>
+					<li><a href="https://gitlab.com/dashboard/projects">GitLab</a></li>
+					<li><a href="https://gitlab.com/fazzi/dotfiles">Dotfiles</a></li>
+					<li><a href="https://modrinth.com/">Modrinth</a></li>
+				</ul>
+			</div>
+			<div class="urls">
+				<div class="header">~/aiweb ⚡</div>
+				<ul>
+					<li><a href="https://chat.openai.com/">ChatGPT</a></li>
+					<li><a href="https://gemini.google.com/app">Gemini</a></li>
+					<li><a href="https://www.perplexity.ai/">Perplexity</a></li>
+					<li><a href="https://chat.deepseek.com/coder">Deepseek</a></li>
+				</ul>
+			</div>
+			<div class="urls">
+				<div class="header">~/reddit </div>
+				<ul>
+					<li><a href="https://reddit.com/">reddit.com</a></li>
+					<li><a href="https://www.reddit.com/r/chess/">r/chess</a></li>
+					<li><a href="https://reddit.com/r/archlinux/">r/archlinux</a></li>
+					<li><a href="https://reddit.com/r/linux_gaming/">r/linux_gaming</a></li>
+				</ul>
+			</div>
+		</div>
+    </div>
+</body>
+<script async src="date.js"></script>
+<script async src="theme.js" currentIndex="0"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('searchInput').focus();
+        }, 500);
+        
+        // Populate the search input field with the query parameter from the URL
+        var queryParams = new URLSearchParams(window.location.search);
+        var query = queryParams.get('q');
+        if (query) {
+            document.getElementById('searchInput').value = query;
+        }
+    });
+
+    // Function to navigate to the URL entered in the search bar
+    function navigateToURL() {
+        var input = document.getElementById('searchInput').value.trim();
+        // Check if the input is a valid URL
+        if (isValidURL(input)) {
+            if (!input.startsWith("http://") && !input.startsWith("https://")) {
+                // If the URL does not start with http:// or https://, prepend it with https://
+                input = "https://" + input;
+            }
+            window.location.href = input; // Navigate to the URL
+            return false; // Prevent form submission
+        } else {
+            // If not a valid URL, construct a search URL
+            var searchURL = "https://www.phind.com/search?q=" + encodeURIComponent(input);
+            window.location.href = searchURL; // Navigate to the search URL
+            return false; // Prevent form submission
+        }
+        document.getElementById('searchInput').value = '';
+    }
+
+    // Function to check if a string is a valid URL
+    function isValidURL(string) {
+        var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+            '((\\d{1,3}\\.){3}\\d{1,3}))' + // IP address
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+            '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+            '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+        return !!pattern.test(string);
+    }
+</script>
+</html>
     }
 
     // Function to check if a string is a valid URL
